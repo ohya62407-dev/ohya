@@ -235,6 +235,89 @@ main {
     }
 }
 
+/* Journey & Skills Section */
+.journey-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 7rem 2rem;
+    border-top: 1px solid var(--border-color); /* 얇은 경계선 추가 */
+    /* border-bottom은 자식 컴포넌트인 Selected Portfolio가 이미 위쪽에 선을 그어서 깔끔하게 구분됨 */
+}
+
+.journey-section .section-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.journey-left h3, .journey-right h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.cert-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.cert-list li {
+    padding: 1.2rem 1.5rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.cert-icon {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.focus-box {
+    padding: 2.5rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    height: 100%;
+}
+
+.focus-box p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.focus-box strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .journey-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
 /* Selected Portfolio Section */
 .selected-portfolio {
     padding: 80px 0 0;
