@@ -254,68 +254,23 @@ main {
     color: #ffffff;
 }
 
-.journey-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+.certifications-wrap {
+    width: 100%;
 }
 
-.journey-left h3, .journey-right h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--text-primary);
+.focus-wrap {
+    width: 100%;
 }
 
-.cert-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-.cert-list li {
-    padding: 1.2rem 1.5rem;
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.1rem;
-    color: var(--text-primary);
-}
-
-.cert-icon {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.focus-box {
-    padding: 2.5rem;
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    height: 100%;
-}
-
-.focus-box p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-}
-
-.focus-box strong {
-    color: var(--text-primary);
-    font-weight: 600;
+.cert-card.glow:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 25px rgba(94, 234, 212, 0.25) !important;
+    border-color: rgba(94, 234, 212, 0.6) !important;
 }
 
 @media (max-width: 768px) {
-    .journey-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+    .certifications-wrap > div {
+        grid-template-columns: 1fr !important;
     }
 }
 
