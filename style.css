@@ -64,22 +64,22 @@ body {
 }
 
 .logo-icon {
-    width: 24px;
-    height: 24px;
+    width: 26px; /* 선 굵기 부각을 위해 미세하게 확대 */
+    height: 26px;
     object-fit: contain;
-    border-radius: 4px;
+    mix-blend-mode: screen; /* 이미지 주변의 어두운 오버레이/배경을 완벽히 날리고 하얀 선만 추출 */
 }
 
 .logo-text {
     font-weight: 400; /* 간결하고 가벼운 베이스 폰트 */
     font-size: 1.15rem;
     letter-spacing: 0.5px;
-    color: var(--text-primary);
+    color: #ffffff; /* 선명하고 쨍한 아주 밝은 하얀색 */
 }
 
 .log-highlight {
     font-weight: 700; /* .log 부분만 굵게 */
-    color: #ccfbf1; /* 아주 연한 민트색 */
+    color: #ffffff; /* 텍스트 전체를 Pure White로 통일해 대비 극대화 */
 }
 
 .nav-links a {
