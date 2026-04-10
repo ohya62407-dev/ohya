@@ -64,22 +64,26 @@ body {
 }
 
 .logo-icon {
-    width: 26px; /* 선 굵기 부각을 위해 미세하게 확대 */
-    height: 26px;
+    width: 36px; /* 로고가 뚜렷하게 보이도록 사이즈 대폭 상향 */
+    height: 36px;
     object-fit: contain;
-    mix-blend-mode: screen; /* 이미지 주변의 어두운 오버레이/배경을 완벽히 날리고 하얀 선만 추출 */
+    mix-blend-mode: screen; /* 메인 기술: 검은색을 완전히 제거 */
+    filter: grayscale(100%) contrast(500%) brightness(200%); /* 모든 반투명한 노이즈/배경색을 완전히 증발시키고 오직 Pure White 선만 극대화 */
+    background: transparent;
 }
 
 .logo-text {
-    font-weight: 400; /* 간결하고 가벼운 베이스 폰트 */
+    font-weight: 300; /* JUNG-EUN 부분을 기존 400보다 더 얇게(Thin) 처리 */
     font-size: 1.15rem;
     letter-spacing: 0.5px;
-    color: #ffffff; /* 선명하고 쨍한 아주 밝은 하얀색 */
+    color: #ffffff; /* 하얀색보다 쨍한 Pure White */
+    text-shadow: none;
 }
 
 .log-highlight {
     font-weight: 700; /* .log 부분만 굵게 */
     color: #ffffff; /* 텍스트 전체를 Pure White로 통일해 대비 극대화 */
+    text-shadow: none;
 }
 
 .nav-links a {
