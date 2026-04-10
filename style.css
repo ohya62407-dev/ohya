@@ -238,7 +238,7 @@ main {
 
 /* Journey & Skills Section */
 .journey-section {
-    max-width: 1000px;
+    max-width: 1200px; /* 3단 레이아웃을 위해 너비를 넓게 확충 */
     margin: 0 auto;
     padding: 7rem 2rem;
     border-top: 1px solid var(--border-color); /* 얇은 경계선 추가 */
@@ -254,23 +254,29 @@ main {
     color: #ffffff;
 }
 
-.certifications-wrap {
-    width: 100%;
+/* 3 Column Journey Grid Layout */
+.journey-3col-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: stretch; /* 세 개 컬럼의 높이를 동일하게 유지 */
 }
 
-.focus-wrap {
-    width: 100%;
+.journey-col {
+    display: flex;
+    flex-direction: column;
 }
 
-.cert-card.glow:hover {
+.cert-card.glow:hover, .focus-box.glow:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 0 25px rgba(94, 234, 212, 0.25) !important;
     border-color: rgba(94, 234, 212, 0.6) !important;
 }
 
-@media (max-width: 768px) {
-    .certifications-wrap > div {
-        grid-template-columns: 1fr !important;
+@media (max-width: 900px) {
+    .journey-3col-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 }
 
