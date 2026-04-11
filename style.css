@@ -11,12 +11,13 @@
     --text-primary: #ffffff; /* 완전히 쨍한 Pure White */
     --text-secondary: rgba(255, 255, 255, 0.85); /* 보조 텍스트도 밝게 */
     --accent: #ffffff;
-    --card-bg: #141414;
-    --border-color: rgba(255, 255, 255, 0.08); /* 연한 가로 구분선 색상 */
+    --card-bg: #161616; /* 조금 더 밝게 조정 */
+    --border-color: transparent; /* 테두리 제거를 위해 투명하게 변경 */
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* 고정 네비바 높이만큼 스크롤 위치 보정 */
 }
 
 body {
@@ -75,15 +76,15 @@ body {
 }
 
 .logo-text {
-    font-weight: 400;
+    font-weight: 800; /* Extra-bold로 강화 */
     font-size: 1.15rem;
     letter-spacing: 0.5px;
     color: var(--text-primary);
 }
 
 .log-highlight {
-    font-weight: 700;
-    color: #ccfbf1; /* 기존의 고급스러운 민트 하이라이트로 원복 */
+    font-weight: 800;
+    color: #5eead4; /* 더 명확한 민트 컬러 적용 */
 }
 
 .nav-links a {
@@ -142,16 +143,19 @@ main {
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
+    gap: 3rem;
 }
 
 .profile-pic-container {
-    margin-bottom: 2.5rem;
+    flex-shrink: 0;
+    margin-top: 25px;
+    margin-left: 4rem;
 }
 
 .profile-placeholder {
@@ -159,11 +163,10 @@ main {
     height: 120px;
     border-radius: 50%;
     background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
     background-image: url('profile.png');
     background-size: cover;
     background-position: center;
-    transition: transform 0.4s ease, border-color 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .profile-placeholder:hover {
@@ -199,7 +202,6 @@ main {
     padding: 0.5rem 1.2rem;
     border-radius: 30px;
     font-size: 0.85rem;
-    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
 }
 
@@ -236,30 +238,29 @@ main {
     }
 }
 
-/* Journey & Skills Section */
+/* PROFILE Section (Compact) */
 .journey-section {
-    max-width: 1200px; /* 3단 레이아웃을 위해 너비를 넓게 확충 */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 7rem 2rem;
-    border-top: 1px solid var(--border-color); /* 얇은 경계선 추가 */
-    /* border-bottom은 자식 컴포넌트인 Selected Portfolio가 이미 위쪽에 선을 그어서 깔끔하게 구분됨 */
+    padding: 2.5rem 0; /* 패딩 추가 축소 */
 }
 
 .journey-section .section-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.5rem; /* 여백 추가 축소 */
     text-align: center;
     letter-spacing: -1px;
     color: #ffffff;
+    word-break: keep-all;
 }
 
 /* 3 Column Journey Grid Layout */
 .journey-3col-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    align-items: stretch; /* 세 개 컬럼의 높이를 동일하게 유지 */
+    grid-template-columns: 1fr 1.25fr 1.25fr;
+    gap: 2rem; /* 간격 축소 */
+    align-items: start;
 }
 
 .journey-col {
@@ -268,9 +269,9 @@ main {
 }
 
 .cert-card.glow:hover, .focus-box.glow:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 0 25px rgba(94, 234, 212, 0.25) !important;
-    border-color: rgba(94, 234, 212, 0.6) !important;
+    transform: translateY(-4px);
+    background-color: #222222 !important;
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.15) !important;
 }
 
 @media (max-width: 900px) {
@@ -283,7 +284,6 @@ main {
 /* Selected Portfolio Section */
 .selected-portfolio {
     padding: 80px 0 0;
-    border-top: 1px solid var(--border-color); /* 섹션 시각적 구분선 추가 */
 }
 
 .selected-portfolio h2 {
@@ -302,9 +302,9 @@ main {
 
 .card-category {
     display: inline-block;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    font-weight: 500;
+    color: #00FFCC; /* 로고 민트색과 통일 */
+    font-size: 0.75rem; /* 제목보다 작게 조절 */
+    font-weight: 600;
     margin-bottom: 0.4rem;
     letter-spacing: 0.5px;
 }
@@ -313,10 +313,9 @@ main {
     background-color: var(--card-bg);
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid var(--border-color);
     display: flex;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s ease, border-color 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .selected-video:hover {
@@ -333,14 +332,13 @@ main {
 .selected-blog-card {
     background-color: var(--card-bg);
     border-radius: 16px;
-    border: 1px solid var(--border-color);
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-decoration: none;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .selected-blog-card:hover {
@@ -388,7 +386,6 @@ main {
 /* Portfolio Section */
 .portfolio {
     padding: 90px 0;
-    border-top: 1px solid var(--border-color);
 }
 
 .portfolio h2 {
@@ -406,10 +403,9 @@ main {
 
 .card {
     background-color: var(--card-bg);
-    padding: 1.6rem 1.4rem; /* 높이를 컴팩트하게 줄임 */
+    padding: 1.6rem 1.4rem;
     border-radius: 16px;
-    border: 1px solid var(--border-color);
-    transition: transform 0.4s ease, border-color 0.4s ease;
+    transition: transform 0.4s ease;
     display: flex;
     flex-direction: column;
 }
@@ -420,11 +416,13 @@ main {
 }
 
 .card h3 {
-    margin-bottom: 0.6rem; /* 불필요한 공백 최소화 */
-    font-size: 1.15rem; /* 살짝 줄여서 4열에서 넘치지 않게 조절 */
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    letter-spacing: -0.5px;
-    line-height: 1.3;
+    letter-spacing: -0.8px; /* 자간을 더 좁혀서 가독성 향상 */
+    line-height: 1.25; /* 줄 간격 최적화 */
+    word-break: keep-all; /* 단어 단위 줄바꿈 강제 */
+    text-align: left; /* 좌측 정렬 명시 */
 }
 
 .card p {
@@ -440,7 +438,7 @@ main {
     color: var(--bg-color);
     background-color: var(--text-primary);
     padding: 0.7rem 1rem;
-    border-radius: 8px;
+    border-radius: 12px; /* 12px로 통일 */
     text-align: center;
     font-size: 0.9rem;
     font-weight: 600;
@@ -454,7 +452,6 @@ main {
     opacity: 0.8;
 }
 
-/* Custom Background for Cards */
 .strategy-card, 
 .longform-card, 
 .shorts-card, 
@@ -462,30 +459,22 @@ main {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-color: rgba(255, 255, 255, 0.08); /* 약간의 경계선 하이라이트 */
-}
-
-.strategy-card:hover, 
-.longform-card:hover, 
-.shorts-card:hover, 
-.blog-card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .strategy-card {
-    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.1) 0%, rgba(10, 10, 10, 0.98) 100%), url('strategy_bg.png');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(10, 10, 10, 0.98) 100%), url('strategy_bg.png'); /* 오버레이 더 진하게 */
 }
 
 .longform-card {
-    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.1) 0%, rgba(10, 10, 10, 0.98) 100%), url('캡처2.png');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(10, 10, 10, 0.98) 100%), url('캡처2.png');
 }
 
 .shorts-card {
-    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.1) 0%, rgba(10, 10, 10, 0.98) 100%), url('캡처3.png');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(10, 10, 10, 0.98) 100%), url('캡처3.png');
 }
 
 .blog-card {
-    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.1) 0%, rgba(10, 10, 10, 0.98) 100%), url('캡처1.png'); /* 주의: 실제 확장자가 png입니다 */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(10, 10, 10, 0.98) 100%), url('캡처1.png'); /* 주의: 실제 확장자가 png입니다 */
 }
 
 .card .btn-group {
@@ -525,31 +514,28 @@ main {
 /* Workflow Section */
 .workflow {
     margin: 5rem auto 2rem;
-    padding: 4rem 2rem 0; /* 상단 구분을 위한 여백 추가 */
-    border-top: 1px solid var(--border-color); /* 가로 구분선 추가 */
+    padding: 4rem 2rem 0;
 }
 
 .workflow-grid {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch; /* 박스 높이 동일하게 고정 */
     gap: 1.5rem;
 }
 
 .step-card {
     background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
     padding: 2.5rem 2rem;
     border-radius: 12px;
     flex: 1; /* equal width */
     min-width: 200px;
     position: relative;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .step-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .step-number {
@@ -603,8 +589,7 @@ main {
 .footer {
     max-width: 800px;
     margin: 0 auto;
-    padding: 100px 2rem 60px; /* 위쪽 여백 조절하여 자연스럽게 연결 */
-    border-top: 1px solid var(--border-color);
+    padding: 80px 2rem 40px; /* 상단 여백 소폭 축소 및 하단 여백 최적화 */
     display: flex;
     flex-direction: column;
 }
@@ -651,7 +636,7 @@ main {
 }
 
 .email-separator {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.3); /* 더 은은한 회색으로 변경 */
     font-size: 1.3rem;
     margin: 0 1.2rem; /* 슬래시 좌우 간격 확장 */
 }
@@ -659,53 +644,79 @@ main {
 .contact-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 6rem;
+    gap: 15px; /* 버튼 사이 간격 */
+    margin-bottom: 40px; /* 버튼과 Copyright 사이 간격 */
 }
 
 .contact-links .btn {
-    text-decoration: none;
-    color: var(--bg-color);
-    background-color: var(--text-primary);
-    padding: 1.2rem 2.5rem; /* 터치 영역 확대 */
-    border-radius: 50px; /* 더 둥글고 세련된 알약 형태(Pill shape) */
+    text-decoration: none; /* 밑줄 제거 */
+    color: #FFFFFF !important;
+    background-color: #1a1a1a; /* 어두운 그레이 배경 */
+    border: 1px solid #333; /* 얇고 은은한 테두리 */
+    padding: 1rem 1.8rem;
+    border-radius: 12px;
     font-size: 1.05rem;
     font-weight: 600;
     text-align: center;
     white-space: nowrap;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 부드러운 애니메이션 통일 */
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.35rem;
-    border: 1px solid transparent;
-}
-
-.contact-links .btn-subtext {
-    font-size: 0.9rem;
-    font-weight: 400;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
 }
 
 .contact-links .btn:hover {
-    background-color: #5eead4; /* 호버 시 민트색 테마 적용 */
-    color: #0b0b0b;
-    transform: translateY(-4px); /* 떠오르는 효과 */
-    box-shadow: 0 10px 25px rgba(94, 234, 212, 0.35); /* 진한 민트 스머지 그림자 */
+    color: #00FFCC !important; /* 호버 시 민트색 */
+    border-color: #00FFCC; /* 테두리 민트색 */
+    transform: translateY(-4px);
+    background-color: #222222;
 }
 
 .contact-links .btn:hover .btn-subtext {
     opacity: 0.9;
 }
 
+/* AI Tool Stack Tags (Compact) */
+.ai-tool-stack {
+    margin-top: 1.5rem; /* 여백 축소 */
+}
+
+.ai-tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* 간격 더 축소 */
+    margin-top: 0.8rem; /* 상단 여백 축소 */
+}
+
+.ai-tag {
+    display: inline-block;
+    background-color: #333333 !important; /* 배경색 강제 적용 */
+    color: #ffffff !important;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    white-space: nowrap;
+    margin-bottom: 2px;
+}
+
+.ai-tag:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
 .copyright {
     color: var(--text-secondary);
-    font-size: 0.75rem; /* 아주 작은 폰트 적용 */
-    opacity: 0.5; /* 시각적으로 은은하게 처리 */
+    font-size: 0.7rem;
+    opacity: 0.35;
     width: 100%;
     text-align: left;
+    padding-bottom: 30px; /* 사이트 하단 끝 여백 축소 */
 }
 
 /* Animations */
@@ -742,6 +753,11 @@ main {
 @media (max-width: 600px) {
     .nav-container {
         padding: 1.2rem;
+    }
+    .hero-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
     }
     .hero-content .title {
         font-size: 2.2rem;
