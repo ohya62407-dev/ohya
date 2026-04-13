@@ -17,7 +17,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* 고정 네비바 높이만큼 스크롤 위치 보정 */
+    scroll-padding-top: 80px !important;
 }
 
 body {
@@ -238,29 +238,37 @@ main {
     }
 }
 
-/* PROFILE Section (Compact) */
-.journey-section {
+/* PROFILE Section */
+#profile {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2.5rem 0; /* 패딩 추가 축소 */
+    padding: 100px 0 !important;
+    min-height: 100vh !important;
+    margin-bottom: 60vh !important; /* 다음 섹션과의 간격을 대폭 확장 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-top: 1px solid var(--border-color);
 }
 
-.journey-section .section-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem; /* 여백 추가 축소 */
-    text-align: center;
-    letter-spacing: -1px;
-    color: #ffffff;
-    word-break: keep-all;
+#profile h2, 
+#portfolio h2 {
+    font-size: 2.2rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 2.5rem !important;
+    text-align: left !important;
+    letter-spacing: -1px !important;
+    color: #ffffff !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
 }
 
 /* 3 Column Journey Grid Layout */
 .journey-3col-grid {
     display: grid;
-    grid-template-columns: 1fr 1.25fr 1.25fr;
-    gap: 2rem; /* 간격 축소 */
-    align-items: start;
+    grid-template-columns: 1fr 1fr 1.2fr; /* 1:1:1.2 비율 적용 */
+    gap: 2rem;
+    align-items: stretch; /* 세 개 컬럼의 높이를 동일하게 유지 */
 }
 
 .journey-col {
@@ -281,16 +289,10 @@ main {
     }
 }
 
-/* Selected Portfolio Section */
-.selected-portfolio {
-    padding: 80px 0 0;
-}
-
-.selected-portfolio h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 2.5rem;
-    letter-spacing: -1px;
+/* PORTFOLIO Section */
+#portfolio {
+    padding: 100px 0 0 !important; /* 상단 여백 확보 */
+    border-top: 1px solid var(--border-color);
 }
 
 .selected-grid {
@@ -756,14 +758,5 @@ main {
     }
     .hero-container {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-    }
-    .hero-content .title {
-        font-size: 2.2rem;
-    }
-    .selected-grid,
-    .portfolio-grid {
-        grid-template-columns: 1fr;
     }
 }
