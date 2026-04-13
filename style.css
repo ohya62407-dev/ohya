@@ -242,10 +242,10 @@ main {
 #profile {
     padding: 80px 0 60px !important;
     min-height: 100vh !important;
-    margin-bottom: 20vh !important; /* 조금만 내려도 포트폴리오가 나오도록 간격 축소 */
+    margin-bottom: 150px !important;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* 콘텐츠를 위, 화살표를 맨 아래로 분리 */
+    justify-content: center !important;
     scroll-margin-top: 100px;
 }
 
@@ -271,11 +271,12 @@ main {
 }
 
 .profile-scroll-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    line-height: 1.5;
 }
 
 .profile-scroll-hint svg {
