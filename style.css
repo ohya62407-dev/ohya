@@ -240,18 +240,25 @@ main {
 
 /* PROFILE Section */
 #profile {
-    max-width: 1200px;
-    margin: 0 auto;
+    /* max-width 제거: main(800px) 컨테이너를 그대로 상속하여 #portfolio와 동일한 너비 기준 유지 */
     padding: 100px 0 !important;
     min-height: 100vh !important;
-    margin-bottom: 60vh !important; /* 다음 섹션과의 간격을 대폭 확장 */
+    margin-bottom: 60vh !important; /* 포트폴리오 섹션이 화면 밖으로 밀려나도록 충분한 간격 확보 */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    border-top: 1px solid var(--border-color);
+    scroll-margin-top: 100px; /* 메뉴바에 가려지지 않도록 스크롤 위치 보정 */
 }
 
-#profile h2, 
+/* PORTFOLIO Section */
+#portfolio {
+    padding: 100px 0 0 !important;
+    border-top: 1px solid var(--border-color);
+    scroll-margin-top: 100px;
+}
+
+/* PROFILE & PORTFOLIO 타이틀 — 완전 동일 스타일 적용 */
+#profile h2,
 #portfolio h2 {
     font-size: 2.2rem !important;
     font-weight: 600 !important;
@@ -266,9 +273,9 @@ main {
 /* 3 Column Journey Grid Layout */
 .journey-3col-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.2fr; /* 1:1:1.2 비율 적용 */
+    grid-template-columns: 1fr 1fr 1.2fr;
     gap: 2rem;
-    align-items: stretch; /* 세 개 컬럼의 높이를 동일하게 유지 */
+    align-items: stretch;
 }
 
 .journey-col {
@@ -289,11 +296,6 @@ main {
     }
 }
 
-/* PORTFOLIO Section */
-#portfolio {
-    padding: 100px 0 0 !important; /* 상단 여백 확보 */
-    border-top: 1px solid var(--border-color);
-}
 
 .selected-grid {
     display: grid;
